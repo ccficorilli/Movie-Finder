@@ -1,4 +1,83 @@
+#root {
+  margin: auto;
+  border: 1px solid black;
+}
 body {
+  display: inherit;
   background: #ECE9E6;
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+  /* background: linear-gradient(to right, #e66363, #ECE9E6); */
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+}
+.main-conatiner {
+  padding: 20px;
+}
+h1 {
+  font-size: 3.5vmax;
+}
+/* **********************Search Component******************** */
+.searchContainer {
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+}
+.searchBar {
+  font-family: inherit;
+  display: inline-block;
+  width: 60%;
+  padding: 10px;
+  font-size: 1.5vmax;
+  border: none;
+  outline: none;
+  background-color: aliceblue;
+  color: #5c8ab3;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.searchButtonCell {
+  display: inline-block;
+  width: 15%;
+  border: none;
+}
+.submit {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.5vmax;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.submit:active {
+  background-color: #979797;
+}
+.submit:active,
+.submit:focus {
+  border: none;
+  outline: none;
+}
+.searchResults {
+  border: 10% solid black;
+  width: 100%;
+  overflow: hidden;
+
+}
+.imageContainer {
+  border: 10% solid black;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px;
+}
+.moviePoster {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+  width: 200px;
+  height: 250px;
+  background-color: #6494ed;
 }

@@ -13,7 +13,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div className='container'>
+        <div className='main-container'>
             <Route exact path='/' component={ MovieSearchContainer } />
             <Route path='/movie/:id' component={ MovieDetailContainer } />
         </div>
