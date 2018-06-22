@@ -1,10 +1,18 @@
 import React from 'react';
+import updateSearchTerm from '../actions/searchActions';
+import { connect } from 'react-redux';
 
-export default class MovieSearchContainer extends React.Component {
+class MovieSearch extends React.Component {
     constructor(props) {
         super(props);
+        this.inputChangeHandler = this.inputChangeHandler.bind(this);
     }
-
+    inputChangeHandler(e){
+        const { value } = e.target;
+        const { dispatch } = this.props;
+        console.log(this.props.searchTerm)
+        dispatch(updateSearchTerm(value));
+    }
     render() {
         return (
             <div>
@@ -15,7 +23,7 @@ export default class MovieSearchContainer extends React.Component {
                         className='searchBar' 
                         placeholder='Enter your movie here'
                         value={this.props.searchTerm}
-                        // onChange={/*This is where the change handler will go*/} 
+                        onChange={this.inputChangeHandler} 
                     />
                     <div className='searchButtonCell'>
                         <button 
@@ -62,3 +70,11 @@ export default class MovieSearchContainer extends React.Component {
         )
     }
 }
+const mapStoreToProps = (store) => {
+    return {
+      searchTerm: store.search.searchTerm,
+      movieInfo: store.search.movieInfo,
+      prevSearch: store.search.prevSearch
+    }
+  }
+  export default connect(mapStoreToProps)(MovieSearch)
