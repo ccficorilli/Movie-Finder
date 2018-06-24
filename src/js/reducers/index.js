@@ -1,18 +1,7 @@
-const defaultState = {
-    movie: 'Pulp Fiction'
-}
+import { combineReducers } from 'redux';
+import search from './searchReducer'
 
-export default function searchReducer(state = defaultState, action) {
-    const { type, payload } = action;
-  
-    switch(type) {
-        case 'PULP_FICTION':
-            return {
-                ...state,
-                defaultState
-            }
-        default: {
-            return defaultState
-        }
-    }
-}
+const rootReducer = combineReducers({
+    search
+      });
+export default rootReducer;

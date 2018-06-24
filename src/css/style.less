@@ -60,24 +60,82 @@ h1 {
   outline: none;
 }
 .searchResults {
-  border: 10% solid black;
   width: 100%;
   overflow: hidden;
-
 }
 .imageContainer {
-  border: 10% solid black;
-
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
   padding: 20px;
+  width: 80%;
+  margin: auto;
 }
-.moviePoster {
-  display: inline-block;
-  text-align: center;
-  margin: 10px;
+.imageContainer::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+.imageContainer::-webkit-scrollbar-thumb {
+  background: #861212;
+}
+.images {
+  overflow: hidden;
+  display: block;
   width: 200px;
   height: 250px;
-  background-color: #6494ed;
+  background-image: url('../img/noposter.jpg');
+}
+.moviePoster {
+  width: 100%;
+  height: 100%;
+}
+.imageCell {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+.movieTitle {
+  width: 200px;
+  display: block;
+  white-space: normal;
+}
+.info {
+  display: block;
+  width: 100%;
+  font-size: 1.3vmax;
+  font-family: 'Raleway' sans-serif;
+  padding: 14px;
+
+}
+.infoHolder {
+  display: inline-block;
+  padding: 20px;
+  max-width: 400px;
+  width: 45%;
+  text-align: left;
+}
+.posterHolder {
+  display: inline-block;
+  width: 45%;
+  max-width: 400px;
+  background-image: url('../img/noposter.jpg')
+
+}
+.posterLrg {
+  width: 100%;
+  height: 100%;
+}
+.backBtn {
+  position: fixed;
+  top: 80px;
+  right: 80px;
+}
+.infoContainer {
+  box-sizing: border-box;
+  width: 80%;
+  display: inline-block;
+
 }
