@@ -9,11 +9,10 @@ import {
 import { Link } from 'react-router-dom'
 
 function mapStoreToProps(store){
-    console.log({store:store.search})
     return {
         searchTerm: store.search.searchTerm,
         moviesMatched: store.search.moviesMatched,
-        prevSearch: store.search.prevSearch
+        prevSearches: store.search.prevSearches
     }
 }
 
@@ -23,7 +22,8 @@ class MovieSearchContainer extends React.Component {
     this.inputChangeHandler = this.inputChangeHandler.bind(this);
     this.initialMovieList = this.initialMovieList.bind(this);
     this.specificMovieData = this.specificMovieData.bind(this);
-    this.mapMovieResults = this.mapMovieResults.bind(this);    
+    this.mapMovieResults = this.mapMovieResults.bind(this);
+    this.setPlaceholder = this.setPlaceholder.bind(this);    
     }
 
     inputChangeHandler(e){
@@ -43,6 +43,15 @@ class MovieSearchContainer extends React.Component {
         dispatch(setImageLink(ndx));
         dispatch(movieInfoSearch(value));
     }
+    setPlaceholder(prevSearch){
+        if(prevSearch.length === 0){
+            return 'what shall we search for???'
+        } else {
+            let ndx = prevSearch.length - 1;
+            return `last searched for '${prevSearch[ndx]}'`
+        }
+    }
+    
     mapMovieResults(list){
         if(list === undefined){
             return (<div className='imageCell'> 
@@ -82,12 +91,12 @@ class MovieSearchContainer extends React.Component {
     render() {
         return (
             <div className='searchContainer'>
-                <h1>Lamest Movie Search Ever!</h1>
+                <h1 className='pageTitle'>Lamest Movie Search Ever!</h1>
                 <div >
                     <input 
                         type='text' 
                         className='searchBar' 
-                        placeholder='Enter your movie here'
+                        placeholder={this.setPlaceholder(this.props.prevSearches)}
                         value={this.props.searchTerm}
                         onChange={this.inputChangeHandler} 
                     />

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 function mapStoreToProps(store){
-    console.log({store:store.search})
     return {
         Title: store.search.Title,
         Year: store.search.Year,
