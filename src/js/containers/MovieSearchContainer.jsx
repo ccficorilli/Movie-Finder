@@ -91,7 +91,7 @@ class MovieSearchContainer extends React.Component {
     render() {
         return (
             <div className='searchContainer'>
-                <h1 className='pageTitle'>Lamest Movie Search Ever!</h1>
+                <h1 className='pageTitle'>Simple Movie Search!</h1>
                 <div >
                     <input 
                         type='text' 
