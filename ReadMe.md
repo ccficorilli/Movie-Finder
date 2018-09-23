@@ -1,2 +1,3 @@
-## React / Redux Movie Finder
-* a simple movie search program to help learn Redux
+# Movie-Finder
+
+A simple little app using react / redux to search for movies and display its cover art
